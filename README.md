@@ -35,7 +35,7 @@ Continual Improvement: Ongoing enhancements to adapt to evolving fitness trends 
 ![Screenshot 2024-11-08 211949](https://github.com/user-attachments/assets/31c23095-7ca9-4762-b928-a199577d80df)
 ![Screenshot 2024-11-08 212008](https://github.com/user-attachments/assets/a44b397f-31d5-44b9-8eb2-74369933a5c1)
 ![Screenshot 2024-11-10 185333](https://github.com/user-attachments/assets/31a49c7b-1b7e-4476-8eec-b3c78226bb53)
-![Screenshot 2024-11-10 185333](https://github.com/user-attachments/assets/4ebfbac1-9d62-48fa-841b-1011d4b52fdf)
+
 
 
 Project Setup
