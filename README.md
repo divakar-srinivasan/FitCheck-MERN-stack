@@ -1,46 +1,42 @@
-MERN Stack Fitness Tracker ( Fitness Tracker )
+MERN Stack Fitness Tracker ( Fitness Tracker ) 🏋️‍♂️💻
 
-Welcome to the MERN Stack Fitness Tracker, a cutting-edge solution designed to revolutionize personal health management using modern web technologies. This platform offers a dynamic and interactive way for users to log and monitor their fitness activities.
+Welcome to the MERN Stack Fitness Tracker, a cutting-edge solution designed to revolutionize personal health management using modern web technologies. This platform offers a dynamic and interactive way for users to log and monitor their fitness activities. 🚀
 
-Key Features:
-User-Friendly Interface: Built with React, providing an intuitive and responsive design.
+## ✨ Key Features
 
-Secure Authentication: Robust login and registration handled via Node.js and MongoDB, ensuring data security.
+- 🖥️ **User-Friendly Interface:** Built with React, providing an intuitive and responsive design.
+- 🔒 **Secure Authentication:** Robust login and registration handled via Node.js and MongoDB, ensuring data security.
+- 📊 **Comprehensive Tracking:** Log daily activities such as step count, water intake, calories burned, and workout sessions.
+- 🤝 **Social Interaction:** Share progress, participate in community challenges, and engage with a supportive fitness community.
+- ⏱️ **Real-Time Data:** Update and access fitness data instantly with secure, cloud-based storage.
+- 📱 **Enhanced User Experience:** Mobile responsiveness with Tailwind CSS and engaging animations powered by GSAP.
+- 🧮 **Health Calculators:** Includes BMI, BMR, Body Fat percentage, and 1RM calculators for personalized fitness insights.
+- 🛒 **E-Cart:** Purchase necessary workout tools directly from the platform.
 
-Comprehensive Tracking: Log daily activities such as step count, water intake, calories burned, and workout sessions.
+## 🔮 Future Work
 
-Social Interaction: Share progress, participate in community challenges, and engage with a supportive fitness community.
+- 📈 **Expanded Health Metrics:** Integration with wearable devices and more detailed health tracking.
+- 🤖 **Personalized Features:** AI-driven fitness recommendations and advanced nutrition tracking.
+- 🔄 **Continual Improvement:** Ongoing enhancements to adapt to evolving fitness trends and technologies.
 
-Real-Time Data: Update and access fitness data instantly with secure, cloud-based storage.
+# FitCheck 🏃‍♂️
 
-Enhanced User Experience: Mobile responsiveness with Tailwind CSS and engaging animations powered by GSAP.
-
-Health Calculators: Includes BMI, BMR, Body Fat percentage, and 1RM calculators for personalized fitness insights.
-
-E-Cart: Purchase necessary workout tools directly from the platform.
-
-Future Work:
-Expanded Health Metrics: Integration with wearable devices and more detailed health tracking.
-
-Personalized Features: AI-driven fitness recommendations and advanced nutrition tracking.
-
-Continual Improvement: Ongoing enhancements to adapt to evolving fitness trends and technologies.
-
-# FitCheck
-
-FitCheck is a fitness engagement platform built on a client-server MERN-style architecture. It combines user onboarding, fitness goal capture, workout/event publishing, calculator utilities, health-information lookups, a lightweight progress dashboard, and a simple equipment storefront into a single web experience.
+FitCheck is a fitness engagement platform built on a client-server MERN-style architecture. It combines user onboarding, fitness goal capture, workout/event publishing, calculator utilities, health-information lookups, a lightweight progress dashboard, and a simple equipment storefront into a single web experience. 💪
 
 The product appears to target individuals who want a guided entry point into fitness rather than a narrow workout logger. The system blends three user needs in one place:
-- personal onboarding and goal setting
-- discovery and publishing of workout-related activities
-- supporting utilities such as calculators, nutrition lookup, and equipment browsing
+
+- 📝 personal onboarding and goal setting
+- 🏋️ discovery and publishing of workout-related activities
+- 🧰 supporting utilities such as calculators, nutrition lookup, and equipment browsing
 
 At a high level, the frontend delivers a highly visual, animation-heavy React experience, while the backend provides a small REST API for authentication, workout/event persistence, and goal capture backed by MongoDB.
 
-## 1. Project Overview
+## 1. Project Overview 🗂️
 
-### Problem Statement
+### Problem Statement ❓
+
 Most fitness products solve only one part of the journey: tracking, coaching, community, or commerce. FitCheck attempts to unify these concerns into a single entry-point application where users can:
+
 - create an account
 - define their personal fitness goals
 - explore or publish workout posts/events
@@ -48,31 +44,37 @@ Most fitness products solve only one part of the journey: tracking, coaching, co
 - access external health/nutrition content
 - browse and purchase fitness equipment
 
-### Solution Approach
+### Solution Approach 🛠️
+
 FitCheck uses:
+
 - a React SPA for onboarding, dashboards, calculators, and content flows
 - an Express API for user, goal, and workout/event data
 - MongoDB for persistence of users, goals, and event records
 - external APIs and browser-side integrations for enrichment such as nutrition data and payments
 
-### Target Users
+### Target Users 🎯
+
 - fitness beginners looking for guided setup and motivation
 - general consumers tracking broad wellness goals
 - users exploring workouts, nutrition, and equipment in one application
 
 ---
 
-## 2. Architecture Overview
+## 2. Architecture Overview 🏗️
 
-### System Style
+### System Style 🖥️
+
 FitCheck is implemented as a **client-server web application** with:
+
 - a standalone React frontend in `frontend/`
 - a standalone Node.js/Express backend in `backend/`
 - MongoDB as the persistence layer
 
 This is not a microservices system. The backend is a single service exposing a small REST API surface.
 
-### Architectural Patterns
+### Architectural Patterns 🧩
+
 - **SPA frontend** using `react-router-dom`
 - **REST-style API** for backend communication
 - **MVC-like backend separation**
@@ -83,7 +85,8 @@ This is not a microservices system. The backend is a single service exposing a s
 - **Document data modeling** with Mongoose
 - **Component-oriented UI composition** in React
 
-### High-Level Data Flow
+### High-Level Data Flow 🔄
+
 ```mermaid
 flowchart LR
     U[User] --> F[React Frontend]
@@ -96,21 +99,24 @@ flowchart LR
     F -->|Checkout SDK| R[Razorpay]
 ```
 
-### Request Flow
+### Request Flow 🔃
+
 1. User interacts with the React application.
 2. Frontend submits requests to the Express API at `/api/users/...`.
 3. Controllers validate/process input and persist documents via Mongoose.
 4. MongoDB stores users, goals, and workout/event records.
 5. Some frontend features bypass the backend and directly call third-party services.
 
-### Important Current Architectural Note
+### Important Current Architectural Note ⚠️
+
 JWT authentication is implemented for sign-in token generation and an `auth` middleware exists, but the middleware is **not currently attached to protected routes**. In practice, the API behaves as mostly public.
 
 ---
 
-## 3. Tech Stack
+## 3. Tech Stack 🧑‍💻
 
-### Frontend
+### Frontend 🎨
+
 - React 18.3.1
 - React Router DOM 6.26.0
 - Axios 1.7.7
@@ -125,7 +131,8 @@ JWT authentication is implemented for sign-in token generation and an `auth` mid
 - use-sound 4.0.3 / Howler 2.2.4
 - Create React App / `react-scripts` 5.0.1
 
-### Backend
+### Backend 🛠️
+
 - Node.js
 - Express 4.19.2
 - Mongoose 8.5.4
@@ -135,11 +142,13 @@ JWT authentication is implemented for sign-in token generation and an `auth` mid
 - cors 2.8.5
 - dotenv 16.4.5
 
-### Database
+### Database 🗄️
+
 - MongoDB
 - Mongoose ODM
 
-### External Integrations
+### External Integrations 🌐
+
 - API Ninjas
   - calories burned
   - exercise lookup
@@ -148,7 +157,8 @@ JWT authentication is implemented for sign-in token generation and an `auth` mid
   - cocktail lookup
 - Razorpay Checkout
 
-### Tooling
+### Tooling 🧰
+
 - npm
 - Tailwind utility styling
 - CRA testing libraries present via default scaffold:
@@ -158,19 +168,20 @@ JWT authentication is implemented for sign-in token generation and an `auth` mid
 
 ---
 
-## 4. Features & Functionalities
+## 4. Features & Functionalities 🏅
 
-### Core Product Features
-- **User registration and sign-in**
+### Core Product Features ⭐
+
+- 👤 **User registration and sign-in**
   - sign-up stores user credentials in MongoDB
   - passwords are hashed using bcrypt in a Mongoose pre-save hook
   - sign-in returns a JWT token with 1-hour expiry
 
-- **Goal onboarding**
+- 🎯 **Goal onboarding**
   - multi-step intake flow captures name, goal type, baseline activity, sex, DOB, height, and weight targets
   - data is persisted to MongoDB through the backend
 
-- **Workout/event publishing**
+- 📝 **Workout/event publishing**
   - users can create workout posts with:
     - image upload
     - workout name
@@ -181,41 +192,46 @@ JWT authentication is implemented for sign-in token generation and an `auth` mid
     - BMR and diet notes
   - images are uploaded through `multipart/form-data`
 
-- **Workout/event feed**
+- 📰 **Workout/event feed**
   - frontend fetches all stored workout posts and renders them as cards
   - binary images are reconstructed in the browser from MongoDB buffer data
 
-### Wellness Utilities
-- BMI calculator
-- BMR/TDEE calculator
-- body fat calculator
-- heart-rate range calculator
-- 1RM calculator
-- stopwatch/timer component
+### Wellness Utilities 🧮
 
-### Health Information Modules
-- calorie-burn lookup
-- exercise lookup by muscle group
-- nutrition lookup
-- recipe lookup
-- cocktail lookup
+- 📏 BMI calculator
+- 🔥 BMR/TDEE calculator
+- 🧑‍🔬 Body fat calculator
+- ❤️ Heart-rate range calculator
+- 🏋️‍♂️ 1RM calculator
+- ⏲️ Stopwatch/timer component
 
-### Progress Experience
-- calendar-based daily tracking UI
-- bar-chart visualization of daily metrics
-- fields for step count, water, calories, duration, distance, heart rate, sleep, weight, reps, and notes
+### Health Information Modules 🩺
 
-### Commerce / Engagement
-- equipment catalog with add-to-cart behavior
-- Razorpay-based checkout flow loaded dynamically in the browser
-- rule-based in-app chatbot for basic fitness Q&A
+- 🔥 Calorie-burn lookup
+- 💪 Exercise lookup by muscle group
+- 🥗 Nutrition lookup
+- 🍲 Recipe lookup
+- 🍹 Cocktail lookup
 
-### Real-World Relevance
+### Progress Experience 📈
+
+- 📅 Calendar-based daily tracking UI
+- 📊 Bar-chart visualization of daily metrics
+- 📝 Fields for step count, water, calories, duration, distance, heart rate, sleep, weight, reps, and notes
+
+### Commerce / Engagement 🛒
+
+- 🏋️ Equipment catalog with add-to-cart behavior
+- 💳 Razorpay-based checkout flow loaded dynamically in the browser
+- 🤖 Rule-based in-app chatbot for basic fitness Q&A
+
+### Real-World Relevance 🌍
+
 The application is positioned as a broad fitness companion rather than a narrow tracker. Its strongest real-world value is the combination of onboarding, calculators, lightweight social posting, and informational utilities in one product surface.
 
 ---
 
-## 5. Folder Structure
+## 5. Folder Structure 📁
 
 ```text
 FitCheck-MERN-stack/
@@ -244,21 +260,26 @@ FitCheck-MERN-stack/
 └── README.md
 ```
 
-### Why the Structure Matters
+### Why the Structure Matters 🏗️
 
-#### `backend/src/config`
+#### `backend/src/config` ⚙️
+
 Holds infrastructure setup, currently the MongoDB connection module. This keeps environment-sensitive bootstrapping away from business logic.
 
-#### `backend/src/models`
+#### `backend/src/models` 🗂️
+
 Contains Mongoose schemas for:
+
 - `User`
 - `Goal`
 - `Event`
 
 This separation is important because persistence concerns remain centralized and reusable across controllers.
 
-#### `backend/src/controllers`
+#### `backend/src/controllers` 🧑‍💻
+
 Encapsulates request handling and business actions such as:
+
 - user creation
 - sign-in
 - goal creation
@@ -266,14 +287,18 @@ Encapsulates request handling and business actions such as:
 
 This keeps route declarations thin and improves maintainability.
 
-#### `backend/src/middleware`
+#### `backend/src/middleware` 🛡️
+
 Reserved for cross-cutting concerns. The existing JWT auth middleware indicates the codebase is moving toward protected-route enforcement even though that is not fully wired yet.
 
-#### `frontend/src/components`
+#### `frontend/src/components` 🖼️
+
 Top-level application screens such as sign-up, sign-in, navigation, home, goals, and footer live here. This reflects a page-oriented UI organization.
 
-#### `frontend/src/components/child-components`
+#### `frontend/src/components/child-components` 🧩
+
 Feature-level UI modules live here:
+
 - calculators
 - add-post form
 - progress dashboard
@@ -284,51 +309,61 @@ Feature-level UI modules live here:
 
 This division makes the main route tree easier to reason about.
 
-#### `frontend/src/components/Api-components`
+#### `frontend/src/components/Api-components` 🌐
+
 External data integrations are isolated into their own module family. This is a sound organizational choice because third-party dependency logic tends to evolve independently from core product flows.
 
-#### `frontend/src/images` and `frontend/src/sounds`
+#### `frontend/src/images` and `frontend/src/sounds` 🖼️🔊
+
 The application is heavily media-driven, so static assets are kept close to the frontend. This suits the current implementation, which emphasizes branded visuals and audio feedback.
 
 ---
 
-## 6. Key Engineering Decisions
+## 6. Key Engineering Decisions 🛠️
 
-### 1. Separate frontend and backend applications
+### 1. Separate frontend and backend applications 🔗
+
 **Why:** clean separation of concerns and easier independent development.  
 **Trade-off:** duplicated setup steps and hardcoded local URLs currently couple environments manually.
 
-### 2. MongoDB + Mongoose for flexible document storage
+### 2. MongoDB + Mongoose for flexible document storage 🗄️
+
 **Why:** onboarding forms and workout/event payloads are naturally document-shaped and evolve easily.  
 **Trade-off:** weaker schema strictness compared with more opinionated relational modeling unless validation is rigorously enforced.
 
-### 3. Image storage in MongoDB as `Buffer`
+### 3. Image storage in MongoDB as `Buffer` 🖼️
+
 **Why:** simple implementation for prototypes and small-scale usage; avoids object storage setup.  
 **Trade-off:** poor scalability for larger media volumes, larger document sizes, higher database memory pressure, and slower feed delivery.
 
-### 4. Client-side direct integration with third-party APIs
+### 4. Client-side direct integration with third-party APIs 🌐
+
 **Why:** fast implementation and minimal backend complexity.  
 **Trade-off:** API keys are exposed in the frontend and should be moved server-side for production use.
 
-### 5. Local component state over centralized state management
+### 5. Local component state over centralized state management 🧠
+
 **Why:** most workflows are isolated and can be handled with `useState`.  
 **Trade-off:** as the app grows, shared auth/session/data caching concerns become harder to coordinate. Notably, `react-redux` exists in dependencies but is not currently used.
 
-### 6. Animation-led UX
+### 6. Animation-led UX 🎬
+
 **Why:** GSAP, AOS, sound effects, and media-heavy layouts create a high-engagement consumer experience.  
 **Trade-off:** animation-heavy interfaces require tighter performance discipline on lower-end devices.
 
 ---
 
-## 7. Setup & Installation
+## 7. Setup & Installation ⚙️
 
-### Prerequisites
+### Prerequisites 📝
+
 - Node.js 18+ recommended
 - npm 9+ recommended
 - MongoDB instance
   - local MongoDB or MongoDB Atlas
 
-### Environment Variables
+### Environment Variables 🔑
+
 Create a `.env` file inside `backend/` or ensure the root-level resolution used by `backend/src/config/db.js` can access the file.
 
 ```env
@@ -337,59 +372,69 @@ JWT_SECRET=<your-secure-jwt-secret>
 PORT=5000
 ```
 
-### Install Dependencies
+### Install Dependencies 📦
 
-#### Backend
+#### Backend 🛠️
+
 ```bash
 cd backend
 npm install
 ```
 
-#### Frontend
+#### Frontend 🎨
+
 ```bash
 cd frontend
 npm install
 ```
 
-### Start the Application
+### Start the Application ▶️
 
-#### Run backend
+#### Run backend 🛠️
+
 ```bash
 cd backend
 node server.js
 ```
 
-#### Run frontend
+#### Run frontend 🎨
+
 ```bash
 cd frontend
 npm start
 ```
 
-### Access URLs
+### Access URLs 🌐
+
 - Frontend: `http://localhost:3000`
 - Backend: `http://localhost:5000`
 
-### Production-Aware Notes
+### Production-Aware Notes 🚦
+
 - Frontend API calls are hardcoded to `http://localhost:5000`; production deployment will require environment-based API base URLs.
 - API Ninjas keys are currently embedded in frontend source and should be externalized.
 - Razorpay uses a hardcoded test key in the client; production should use environment-specific configuration and server-side order creation.
 
-### Docker
+### Docker 🐳
+
 No Docker configuration is present in the repository.
 
-### CI/CD
+### CI/CD 🔄
+
 No CI workflow or deployment pipeline configuration is present in the repository.
 
 ---
 
-## 8. API Documentation
+## 8. API Documentation 📚
 
 Base path: `/api/users`
 
 ### `POST /signup`
+
 Creates a new user account.
 
 **Request**
+
 ```json
 {
   "email": "user@example.com",
@@ -398,6 +443,7 @@ Creates a new user account.
 ```
 
 **Response**
+
 ```json
 {
   "message": "User created successfully"
@@ -405,9 +451,11 @@ Creates a new user account.
 ```
 
 ### `POST /login`
+
 Authenticates a user and returns a JWT.
 
 **Request**
+
 ```json
 {
   "email": "user@example.com",
@@ -416,6 +464,7 @@ Authenticates a user and returns a JWT.
 ```
 
 **Success Response**
+
 ```json
 {
   "message": "Sign-in successful",
@@ -424,9 +473,11 @@ Authenticates a user and returns a JWT.
 ```
 
 ### `POST /goals`
+
 Stores onboarding/goal data.
 
 **Request**
+
 ```json
 {
   "firstName": "Jane",
@@ -442,6 +493,7 @@ Stores onboarding/goal data.
 ```
 
 **Response**
+
 ```json
 {
   "message": "Goal created successfully",
@@ -453,12 +505,14 @@ Stores onboarding/goal data.
 ```
 
 ### `POST /add`
+
 Creates a workout/event post with image upload.
 
 **Content-Type**
 `multipart/form-data`
 
 **Fields**
+
 - `image`
 - `workoutName`
 - `description`
@@ -471,6 +525,7 @@ Creates a workout/event post with image upload.
 - `diet`
 
 **Response**
+
 ```json
 {
   "message": "Event created successfully",
@@ -482,9 +537,11 @@ Creates a workout/event post with image upload.
 ```
 
 ### `GET /get`
+
 Returns all workout/event posts.
 
 **Response**
+
 ```json
 [
   {
@@ -493,22 +550,26 @@ Returns all workout/event posts.
     "description": "30-minute HIIT session",
     "image": {
       "type": "Buffer",
-      "data": [/* ... */]
+      "data": [
+        /* ... */
+      ]
     }
   }
 ]
 ```
 
-### Authentication Mechanism
+### Authentication Mechanism 🔒
+
 - JWT is issued on successful login.
 - Middleware exists to validate `Authorization: Bearer <token>`.
 - Current routes do **not** enforce the middleware, so authentication is not yet consistently applied.
 
 ---
 
-## 9. UI/UX Overview
+## 9. UI/UX Overview 🎨
 
-### Main Screens
+### Main Screens 🖥️
+
 - `Signup`: multi-step intro and account creation flow
 - `Signin`: credential-based login flow
 - `Goals`: multi-step onboarding questionnaire
@@ -520,19 +581,23 @@ Returns all workout/event posts.
 - `Cart`: product listing and checkout
 - `About` and `Contact`: brand and support pages
 
-### State Management Approach
+### State Management Approach 🧠
+
 - primarily local component state with `useState`
 - route-based composition using nested React Router routes
 - no active global store despite Redux dependency presence
 
-### UX Characteristics
+### UX Characteristics ✨
+
 - animation-heavy onboarding and transitions using GSAP/AOS
 - strong visual branding with custom imagery, fonts, audio, and overlays
 - responsive behavior is present in several components via Tailwind utility classes
 - chatbot is globally accessible through the footer
 
-### Accessibility Observations
+### Accessibility Observations ♿
+
 Accessibility has not been systematically implemented. Areas for improvement include:
+
 - form labeling
 - keyboard interaction coverage
 - semantic button/link consistency
@@ -541,14 +606,16 @@ Accessibility has not been systematically implemented. Areas for improvement inc
 
 ---
 
-## 10. Scalability & Performance
+## 10. Scalability & Performance 🚀
 
-### Current Strengths
+### Current Strengths 💪
+
 - frontend and backend are decoupled enough to scale independently
 - Mongoose models provide a clear persistence boundary
 - feature areas are modularized in the UI
 
-### Current Constraints
+### Current Constraints ⚠️
+
 - event images stored directly in MongoDB will not scale well
 - all events are fetched without pagination or filtering
 - no caching layer exists
@@ -556,7 +623,8 @@ Accessibility has not been systematically implemented. Areas for improvement inc
 - third-party API calls happen directly from the client with no aggregation or throttling layer
 - progress tracking is client-side only and not persisted
 
-### Recommended Growth Path
+### Recommended Growth Path 🌱
+
 - move image storage to object storage such as S3/Cloudinary
 - add pagination and filtering to event feed APIs
 - introduce backend-side third-party API proxying and caching
@@ -566,15 +634,17 @@ Accessibility has not been systematically implemented. Areas for improvement inc
 
 ---
 
-## 11. Security Considerations
+## 11. Security Considerations 🔒
 
-### Implemented
+### Implemented ✅
+
 - bcrypt password hashing before persistence
 - JWT generation for authenticated sessions
 - environment variables for backend secrets
 - basic CORS and JSON middleware setup
 
-### Gaps to Address Before Production
+### Gaps to Address Before Production ⚠️
+
 - auth middleware is not enforced on protected routes
 - API Ninjas key is hardcoded in frontend source
 - Razorpay key is hardcoded in frontend source
@@ -585,7 +655,8 @@ Accessibility has not been systematically implemented. Areas for improvement inc
 - no refresh-token/session revocation strategy
 - no authorization checks tying events/goals to authenticated users
 
-### Production Best Practices Recommended
+### Production Best Practices Recommended 🏆
+
 - use `helmet`, request validation, and rate limiting
 - move external API secrets to server-side environment variables
 - protect mutating routes with auth middleware
@@ -595,15 +666,18 @@ Accessibility has not been systematically implemented. Areas for improvement inc
 
 ---
 
-## 12. Testing Strategy
+## 12. Testing Strategy 🧪
 
-### Current State
+### Current State 📋
+
 The repository includes frontend testing libraries via CRA defaults, but there are **no meaningful tests implemented** in the checked-in codebase.
 
-### Observed Backend State
+### Observed Backend State 🛠️
+
 - backend `npm test` is a placeholder that exits with an error
 
-### Recommended Testing Strategy
+### Recommended Testing Strategy 📝
+
 - **Unit tests**
   - controller logic
   - calculator formulas
@@ -620,44 +694,55 @@ The repository includes frontend testing libraries via CRA defaults, but there a
   - health lookup workflows
 
 Suggested tools:
-- Jest
-- React Testing Library
-- Supertest
-- Playwright or Cypress
+
+- 🃏 Jest
+- 🧪 React Testing Library
+- 🚦 Supertest
+- 🕹️ Playwright or Cypress
 
 ---
 
-## 13. Deployment
+## 13. Deployment 🚀
 
-### Current Repository State
+### Current Repository State 📦
+
 No deployment manifests or environment promotion pipeline are included.
 
-### Practical Deployment Model
-#### Frontend
+### Practical Deployment Model 🌍
+
+#### Frontend 🎨
+
 Could be deployed to:
+
 - Vercel
 - Netlify
 - S3 + CloudFront
 - any static hosting platform
 
-#### Backend
+#### Backend 🛠️
+
 Could be deployed to:
+
 - Render
 - Railway
 - Fly.io
 - AWS ECS / EC2
 - any Node.js-capable platform
 
-#### Database
+#### Database 🗄️
+
 - MongoDB Atlas is the most natural managed option
 
-### Environment Strategy
+### Environment Strategy ⚙️
+
 A production-ready setup should define:
+
 - `development`
 - `staging`
 - `production`
 
 Each environment should have its own:
+
 - API base URL
 - database connection string
 - JWT secret
@@ -666,7 +751,7 @@ Each environment should have its own:
 
 ---
 
-## 14. Future Improvements
+## 14. Future Improvements 🔮
 
 - Enforce authenticated and authorized API access across all mutating routes
 - Associate goals and events with specific users
@@ -683,11 +768,12 @@ Each environment should have its own:
 
 ---
 
-## 15. Contribution Guidelines
+## 15. Contribution Guidelines 🤝
 
 Contributions should preserve the existing split between frontend and backend responsibilities.
 
-### Recommended Workflow
+### Recommended Workflow 🛠️
+
 1. Fork the repository.
 2. Create a feature branch from `main`.
 3. Keep backend and frontend changes scoped and intentional.
@@ -699,7 +785,8 @@ Contributions should preserve the existing split between frontend and backend re
    - screenshots for UI changes
    - notes on API/schema changes
 
-### Engineering Expectations
+### Engineering Expectations 📏
+
 - keep routes thin and business logic in controllers/services
 - maintain schema clarity in Mongoose models
 - avoid hardcoded environment-specific URLs and secrets
@@ -708,7 +795,7 @@ Contributions should preserve the existing split between frontend and backend re
 
 ---
 
-## 16. Screenshot
+## 16. Screenshot 🖼️
 
 ![Screenshot 2024-11-08 204610](https://github.com/user-attachments/assets/d976213b-26c1-45fd-b8f6-cc876e9fc62f)
 ![Screenshot 2024-11-08 204631](https://github.com/user-attachments/assets/e1f8203b-0d1d-4197-85f7-8efa4cfa911e)
@@ -721,11 +808,10 @@ Contributions should preserve the existing split between frontend and backend re
 ![Screenshot 2024-11-08 212008](https://github.com/user-attachments/assets/a44b397f-31d5-44b9-8eb2-74369933a5c1)
 ![Screenshot 2024-11-10 185333](https://github.com/user-attachments/assets/31a49c7b-1b7e-4476-8eec-b3c78226bb53)
 
-
-
 ## 17. Contact
 
 For any queries or support, feel free to reach out:
+
 - **Email**: sdivakar2005@gmail.com
 - **LinkedIn**: https://www.linkedin.com/in/divakar-srinivasan/
 - **GitHub**: [divakar-srinivasan](https://github.com/divakar-srinivasan)
