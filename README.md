@@ -1,4 +1,4 @@
-MERN Stack Fitness Tracker ( Fitness Tracker ) 🏋️‍♂️💻
+## MERN Stack Fitness Tracker ( Fitness Tracker ) 🏋️‍♂️💻
 
 Welcome to the MERN Stack Fitness Tracker, a cutting-edge solution designed to revolutionize personal health management using modern web technologies. This platform offers a dynamic and interactive way for users to log and monitor their fitness activities. 🚀
 
